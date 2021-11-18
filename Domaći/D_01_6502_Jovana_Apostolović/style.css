@@ -1,0 +1,156 @@
+body {
+    background-color: rgb(207, 204, 207);
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-style: oblique;
+    border-width: 2px;
+    border: rgb(218, 107, 107);
+    border-style: solid;
+    text-shadow: 2px 2px rgb(252, 90, 117);
+    color: rgb(189, 119, 183);
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px palevioletred;
+}
+
+h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px plum;
+    margin-left: 15px;
+}
+
+#cao_tekst {
+    font-size: 25px;
+    color: rgb(161, 56, 121);
+}
+
+#ja {
+    float: left; 
+    margin-left: 30px; 
+    margin-right: 30px; 
+    border-style: solid; 
+}
+
+#bio {
+    background-color: rgba(255, 71, 255, 0.5);
+    text-align: right;
+}
+
+#lista_skup {
+    margin-left: 300px;
+}
+
+#choco {
+    float: left; 
+    margin-left: 30px; 
+    margin-right: 30px; 
+    border-style: groove;
+}
+
+#sapuni {
+    float: left; 
+    margin-left: 30px; 
+    margin-right: 30px; 
+    border-style: solid; 
+    border-bottom-color: #e15194; 
+    border-left-color: #e15194; 
+    border-top-color: blueviolet; 
+    border-right-color: blueviolet;
+}
+
+.pasus {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    background-color: rgb(224, 183, 224);
+}
+
+/* Ovde ću delove označene <span> tagom izmeniti */
+span {
+    color: purple;
+    font-weight: bold;
+}
+
+ul {
+    background-color: rgb(197, 196, 196);
+    border: dotted plum;
+    
+}
+
+ul li:nth-child(2) {
+    background-color: rgb(233, 173, 208);
+}
+
+ul li ul li {
+    font-style: italic;
+    color: rgb(156, 84, 156);
+
+}
+
+ol {
+    background-color: rgb(189, 119, 183);
+    
+}
+
+section {
+    border: solid 2px brown;
+
+}
+
+table {
+    width: 50%;
+}
+
+tr {
+    height: 35px;
+}
+
+table, th, td {
+    border: 5px solid rgb(245, 179, 225);
+}
+
+td {
+    padding-left: 2%;
+}
+
+th {
+    background-color: #e15194;
+}
+
+td {
+    background-color: #8371a1;
+}
+
+aside {
+    width: 30%;
+    padding-right: 15px;
+    margin-right: 15px;
+    float: right;
+    margin-top: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a:link {
+    color: blueviolet;
+}
+
+a:visited {
+    color: palevioletred;
+}
+
+a:hover {
+    color: royalblue;
+}
+
+a:active {
+    color: yellow;
+}
+
+
+
+
