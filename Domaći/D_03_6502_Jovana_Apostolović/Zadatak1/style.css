@@ -1,0 +1,44 @@
+p {
+    width: 100%;
+}
+
+/* #duga_tabela th {
+    text-align:center
+} */
+
+h2 {
+    text-align: center;
+}
+
+#prva_tabela img {
+    width: 200px;
+    height: 280px;
+}
+
+p {
+    width: 70%;
+}
+
+table {
+    width: 65%;
+}
+
+a:link {
+    color: royalblue;
+}
+
+a:visited {
+    color: rebeccapurple;
+}
+
+#druga_tabela td :nth-child(even) {
+    width: 100%;
+}
+
+#druga_tabela td :nth-child(odd) {
+    width: 95%;
+}
+
+body {
+    font-size: large;
+}
