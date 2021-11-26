@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.topbar {
+    background-color: crimson;
+    overflow: hidden;
+}
+
+.topbar ul li {
+    background-color: black;
+    float: left;
+    width: 25%;
+    text-align: center;
+    border: solid white;
+
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ a :active {
+     color: white;
+ }
+
+ a :hover {
+     color: red;
+ }

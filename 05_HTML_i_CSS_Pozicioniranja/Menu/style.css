@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+#rest {
+    position: relative;
+    top: 150px;
+    /* height: 1200px;
+    overflow: scroll; */
+
+}
+
+/* body {
+    padding-top: 150px;
+} */
+
+/* vertikalni meni */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
+nav ul {
+    overflow: hidden; 
+    list-style-type: none;
+
+}
+
+nav ul li {
+    float: left;
+    background-color: rgb(59, 51, 59);
+    border: 2px solid blue;
+    width: 25%;
+    text-align: center;
+
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px o;
+
+}
+
+nav ul li a:hover {
+    background-color: tomato;
+
+}
+
+/* padajući meni */
+.submenu {
+    display: none;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* horizontalni meni */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+footer ul {
+    list-style-type: none;
+
+}
+
+footer ul li {
+    width: 25%;
+    background-color: turquoise;
+
+}
+
+footer ul li a {
+    display: block;
+    padding: 10px 0 10px 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+footer ul li a:hover {
+    background-color: burlywood;
+}

@@ -1,0 +1,21 @@
+img {
+    width: 50%;
+}
+
+/* ekran širine 700px i manji */
+@media only screen and (max-width: 700px) {
+    img {
+        width: 100%;
+    }
+    
+    p {
+        text-decoration: underline;
+    }
+}
+
+/* ekran širine između 500px i 700px */
+@media only screen and (min-width: 500px) and (max-width:700px) {
+    p {
+        color: purple;
+    }
+}

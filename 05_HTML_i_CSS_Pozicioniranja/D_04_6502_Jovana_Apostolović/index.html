@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tekst">
+        <header>
+            <h1>Responsive Forma</h1>
+
+            <p>Promenite širinu prozora kako biste videli efekat forme. Kada je ekran manji od 600px, formu kreirati tako da se njeni elementi nalaze jedni ispod drugih.</p>
+
+            <br>
+        </header>
+    </div>
+
+    <div class="forma">
+        <form action="">
+            <fieldset>
+                <section >
+                    <label class="col-4" for="">Ime i prezime</label>
+                    <input class="col-8" type="text" placeholder="Unesite svoje ime i prezime...">
+                </section>
+
+                <section>
+                    <label class="col-4" for="">Pretražite</label>
+                    <input class="col-8" type="text" placeholder="Pretražite...">
+                    <!-- <label class="col-4 nevidljivo" for=""> </label> -->
+                </section>
+
+                <section>
+                    <label class="col-4" for="">Zemlja</label>
+                    <select class="col-8" name="zemlja" id="zemlja">
+                        <option value="italija">Italija</option>
+                        <option value="srbija">Srbija</option>
+                        <option value="nemačka">Nemačka</option>
+                    </select>
+                </section>
+
+                <section>
+                    <label class="col-4" for="">Opis</label>
+                    <textarea class="col-8" name="opis" id="opis" placeholder="Napišite neki opis..." cols="30" rows="10"></textarea>
+                </section>
+
+                <section id="sub">
+                    <input class="col-1" type="submit" value="Potvrdite">
+                </section>
+
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>
