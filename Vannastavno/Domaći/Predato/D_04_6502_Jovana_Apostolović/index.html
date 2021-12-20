@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="tekst">
-        <header>
+    <div class="row">
+        <header class="col-12">
             <h1>Responsive Forma</h1>
+            <br>
 
             <p>Promenite širinu prozora kako biste videli efekat forme. Kada je ekran manji od 600px, formu kreirati tako da se njeni elementi nalaze jedni ispod drugih.</p>
 
@@ -21,34 +23,34 @@
     <div class="forma">
         <form action="">
             <fieldset>
-                <section >
+                <div class="row">
                     <label class="col-4" for="">Ime i prezime</label>
                     <input class="col-8" type="text" placeholder="Unesite svoje ime i prezime...">
-                </section>
+                </div>
 
-                <section>
+                <div class="row">
                     <label class="col-4" for="">Pretražite</label>
-                    <input class="col-8" type="text" placeholder="Pretražite...">
-                    <!-- <label class="col-4 nevidljivo" for=""> </label> -->
-                </section>
+                    <input class="col-4" id="pretraga" type="text" placeholder="Pretražite...">
+                    <label class="col-4 nevidljivo" for=""> </label>
+                </div>
 
-                <section>
-                    <label class="col-4" for="">Zemlja</label>
+                <div class="row">
+                    <label class="col-4 zemlja" for="">Zemlja</label>
                     <select class="col-8" name="zemlja" id="zemlja">
                         <option value="italija">Italija</option>
                         <option value="srbija">Srbija</option>
                         <option value="nemačka">Nemačka</option>
                     </select>
-                </section>
+                </div>
 
-                <section>
-                    <label class="col-4" for="">Opis</label>
+                <div class="row">
+                    <label class="col-4 opis" for="">Opis</label>
                     <textarea class="col-8" name="opis" id="opis" placeholder="Napišite neki opis..." cols="30" rows="10"></textarea>
-                </section>
+                </div>
 
-                <section id="sub">
+                <div class="row" id="sub">
                     <input class="col-1" type="submit" value="Potvrdite">
-                </section>
+                </div>
 
             </fieldset>
         </form>

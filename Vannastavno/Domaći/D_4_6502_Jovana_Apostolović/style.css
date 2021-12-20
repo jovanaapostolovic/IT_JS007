@@ -16,7 +16,7 @@
     margin-top: 6px;
 }
 
-#sub:after {
+#sub::after {
     content: "";
     display: table;
     clear: both;

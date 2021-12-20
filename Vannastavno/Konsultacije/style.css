@@ -1,0 +1,27 @@
+#div1 {
+    background-color: chocolate;
+    width: 250px;
+    height: 250px;
+    /* position: relative (relativno u odnosu na poziciju inače koji ima */
+    /* position: apsolut (u odnosu na parenta ovde je to body tag) */
+    position: fixed;
+    top: 10%;
+    left: 300px;
+    
+}
+#div1 p {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    
+}
+
+/* position:fixed (u odnosu na view port na ono što se vidi i kada smanjimo ekran, u odnosu na bilo koje dimenzije browsera*/
+body {
+    height: 2000px;
+}
+h1 {
+    /* z-index: 2; vrednost na z osi */
+    position: static;
+}

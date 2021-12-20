@@ -4,45 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forme</title>
+    <title>Forma</title>
+    <link rel="stylesheet" href="forma.css">
 </head>
 <body>
     <form action="">
         <fieldset>
             <legend>
-                Osnovni podaci
+                Naslov
             </legend>
-            <p>
-                <label for="">Ime:</label>
-                <input type="text" maxlength="15" value="Ana">
-            </p>
-            
-           <p>
-                <label for="">Prezime:</label>
-                <input type="text" placeholder="Unesite prezime">
-           </p>
+                
+                <p>
+                    <label for="">Ime:</label>
+                    <input type="text" maxlength="15" value="Ana">
+                </p>
 
-           <p>
-               <label for="">Godine:</label>
-               <input type="number" min="18" step="1">
-           </p>
+                <p>
+                    <label for="">Prezime:</label>
+                    <input type="text" placeholder="Unesite prezime">
+                </p>
 
-           <p>
-               <label for="">E-mail:</label>
-               <input type="email">
-               <!-- <input type="email" name="" id=""> -->
-           </p>
+                <p>
+                    <label for="">Godine:</label>
+                    <input type="number" min="18" step="1">
+                </p>
 
-           <p>
-               <label for="">Lozinka:</label>
-               <input type="password" name="" id="">
-           </p>
+                <p>
+                    <label for="">E-mail:</label>
+                    <input type="email">
+                </p>
+
+                <p>
+                    <label for="">Lozinka:</label>
+                    <input type="password" name="" id="">
+                </p>
         </fieldset>
 
         <fieldset>
-            <legend>
-                Ostali podaci
-            </legend>
+            <legend>Naslov</legend>
+
             <p>
                 <label for="">Odaberite pol:</label>
                 <input type="radio" name="pol" id="" value="z">Ženski
@@ -81,13 +81,32 @@
                 </select>
             </p>
         </fieldset>
-
-        <p>
-            <input type="submit" value="Pošalji">
-            <input type="reset" value="Resetuj">
-            <button>KLIKNI</button>
-        </p>
-
     </form>
+
+    <form action="">
+        <fieldset>
+            <legend>naslov</legend>
+
+            <p>
+                <label for="">Ime:</label>
+                <input type="text" maxlength="15" value="Ana">
+            </p>
+
+            <p>
+                <label for="">broj kartice</label>
+                <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+
+            </p>
+
+            <p class="datum">
+                <label for="">datum isteka</label>
+                <input type="number" min="1" max="12" placeholder="MM">
+                <input type="number" placeholder="YY">
+
+            </p>
+        </fieldset>
+    </form>
+
+    
 </body>
 </html>
