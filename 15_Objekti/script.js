@@ -173,7 +173,7 @@ let dan = {
     ledeniDan: function () {
         let rez = true;
         this.vrednostiTemperature.forEach(e => {
-            if ( e> 0) {
+            if ( e > 0) {
                 rez = false;
             }
         });
