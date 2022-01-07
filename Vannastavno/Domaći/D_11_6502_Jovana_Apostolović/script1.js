@@ -35,9 +35,7 @@ let knjiga5 = {
 
 let niz = [knjiga1, knjiga2, knjiga3, knjiga4, knjiga5];
 
-
 function makeTable(array) {
-    
     let table = document.createElement('table');
     for (let i = 0; i < array.length; i++) {
         let row = document.createElement('tr');
@@ -54,9 +52,7 @@ function makeTable(array) {
             if (j == 0) {
                 img.src = `${array[i].sličica}`;
                 cell.appendChild(img);
-
             }
-            
             else {
                 par.textContent = `${array[i].nazivKnjige} ${array[i].autorKnjige}`;
                 if (array[i].polje == true) {
@@ -67,13 +63,11 @@ function makeTable(array) {
                 }
                 cell.appendChild(par);
             }
-            
             row.appendChild(cell);
         }
         table.appendChild(row);
     }
     document.body.appendChild(table);
-
     return table;
 };
 

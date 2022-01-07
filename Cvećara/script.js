@@ -73,12 +73,12 @@ btnIzračunaj.addEventListener("click", (e) => {
     let izborPlaćanja = načinPlaćanja.value;
 
     if (izborPlaćanja == "kartica" && račun > 2000) {
-        poručeno.innerHTML += `<p style="color:purple">Cena bez popusta je ${račun}`;
+        poručeno.innerHTML += `<p style="color:purple">Cena bez popusta je ${račun} rsd`;
         račun = račun - račun * 0.1;
-        cenaSaPopustom.innerHTML += `<h1 style="color:purple">Cena sa popustom je: ${račun}</h1>`;
+        cenaSaPopustom.innerHTML += `<h1 style="color:purple">Cena sa popustom je: ${račun} rsd</h1>`;
     }
     else {
-        poručeno.innerHTML += `<p style="color:purple">Cena je ${račun}`;
+        poručeno.innerHTML += `<p style="color:purple">Cena je ${račun} rsd`;
     }
 
     
