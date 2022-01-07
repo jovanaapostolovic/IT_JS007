@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <div>
+            <h1 style="color:rgb(216, 133, 216)">Odaberite veće:</h1>
+            <input type="number" placeholder="Cena po cvetu je 150 din." min="0" step="1" id="ruže">
+            <label>Ruže</label>
+            <br>
+            <input type="number" placeholder="Cena po cvetu je 120 din." min="0" step="1" id="ljiljani">
+            <label>Ljiljani</label>
+            <br>
+            <input type="number" placeholder="Cena po cvetu je 700 din." min="0" step="1" id="gerberi">
+            <label>Gerberi</label>
+            <br>
+        </div>
+
+        <div>
+            <h1 style="color:rgb(216, 133, 216)">Dodatni pokloni:</h1>
+            <input type="checkbox" name="pokloni" id="bombonjera">Bombonjera
+            <br>
+            <input type="checkbox" name="pokloni" id="čokolada">Čokolada
+            <br>
+            <input type="checkbox" name="pokloni" id="šampanjac">Šampanjac
+        </div>
+
+        <div>
+            <h1 style="color:rgb(216, 133, 216)">Plaćanje:</h1>
+            <input type="radio" name="plaćanje" id="" value="keš">Keš
+            <br>
+            <input type="radio" name="plaćanje" id="" value="kartica">Kartica
+        </div>
+
+        <div>
+            <input type="submit" value="Izračunaj" id="izračunaj">
+            <input type="submit" value="Resetuj" id="resetuj">
+        </div>
+
+        
+    </form>
+
+    <div>
+        <h1 style="color:rgb(216, 133, 216)">Vaša porudžbina:</h1>
+        <section id="porudžbina"></section>
+    </div>
+
+    <div id="cena">
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
