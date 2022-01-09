@@ -70,21 +70,27 @@ let pitanje10 = {
 
 let nizPitanja = [pitanje1, pitanje2, pitanje3, pitanje4, pitanje5, pitanje6, pitanje7, pitanje8, pitanje9, pitanje10];
 
-let izmešaniNiz5Pitanja = niz => {
-    for (let i = niz.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let x = niz[i];
-      niz[i] = niz[j];
-      niz[j] = x;
-    }
-    return niz.slice(0, 5);
-};
 
-let noviNiz = izmešaniNiz5Pitanja(nizPitanja);
 
 let kviz = niz => {
-    let forma = document.createElement("form");   
-    for (let i = 0; i < niz.length; i++) {
+
+    document.body.style.backgroundColor = "cornsilk"; //boja pozadine
+
+    let izmešaniNiz5Pitanja = niz => {
+        for (let i = niz.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          let x = niz[i];
+          niz[i] = niz[j];
+          niz[j] = x;
+        }
+        return niz.slice(0, 5);
+    };
+    
+    let noviNiz = izmešaniNiz5Pitanja(niz);
+
+    let forma = document.createElement("form"); 
+
+    for (let i = 0; i < noviNiz.length; i++) {
         let paragraf = document.createElement("p");
         paragraf.style.border = "1px solid orange";
         paragraf.style.borderRadius = "10px";
@@ -96,7 +102,7 @@ let kviz = niz => {
         pitanje.textContent = `${i+1}. ${niz[i].tekst}`;
         paragraf.appendChild(pitanje);
         
-        for (let j = 0; j < niz[i].odgovori.length; j++) {
+        for (let j = 0; j < noviNiz[i].odgovori.length; j++) {
             let razmak = document.createElement("br");
             let odgovorIzbor = document.createElement("input");
             odgovorIzbor.type = "radio";
@@ -107,7 +113,7 @@ let kviz = niz => {
             }  
 
             let odgovorPonuđen = document.createElement("label");
-            odgovorPonuđen.textContent = niz[i].odgovori[j];
+            odgovorPonuđen.textContent = noviNiz[i].odgovori[j];
             paragraf.appendChild(odgovorIzbor);
             paragraf.appendChild(odgovorPonuđen);
             paragraf.appendChild(razmak);
@@ -126,7 +132,7 @@ let kviz = niz => {
     btnNovaPitanja.textContent = "Nova pitanja";
     document.body.appendChild(btnNovaPitanja);
 
-    let p = 0;
+    let p = 0; //br. pitanja
     
     btnPošaljiOdgovore.addEventListener("click", () => {
         let rešenja = document.createElement("div");
@@ -140,13 +146,17 @@ let kviz = niz => {
             else {
                 rešenja.innerHTML += `<p style="color:red;">Netačno ste odgovorili na ${p}. pitanje.</p>`;
             }
-           
+            
+            let k = document.getElementsByTagName("input");
+            let k1 = Array.from(k);
+            k1.forEach( n => {
+                n.disabled = true;
+            });
+            
         }
-        
+
         document.body.appendChild(rešenja);
-        // document.getElementsByTagName(`input`).disabled = true;
-        // document.querySelectorAll(`input[type="radio"]`).disabled = true;
-        // document.getElementsByClassName(radioDugme).disabled = true;
+        
     });
 
     btnNovaPitanja.addEventListener("click", () => {
@@ -155,7 +165,7 @@ let kviz = niz => {
 
 };
 
-kviz(noviNiz);
+kviz(nizPitanja);
 
 
 
