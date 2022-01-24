@@ -70,62 +70,59 @@ let pitanje10 = {
 
 let nizPitanja = [pitanje1, pitanje2, pitanje3, pitanje4, pitanje5, pitanje6, pitanje7, pitanje8, pitanje9, pitanje10];
 
-let izmešaniNizPitanja = niz => {
-    for (let i = niz.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let x = niz[i];
-      niz[i] = niz[j];
-      niz[j] = x;
-    }
-    return niz.slice(0, 5);
-};
 
-let noviNiz = izmešaniNizPitanja(nizPitanja);
 
 let kviz = niz => {
-    let t = "";
-    let p = 0;
-    for (let i = 0; i < niz.length; i++) {
-        let odvPitanja = document.createElement("br");
-        let forma = document.createElement("form");
-        forma.style.border = "1px solid orange";
-        forma.style.borderRadius = "10px";
-        forma.style.backgroundColor = "white";
-        forma.style.padding = "10px";
-        forma.style.display = "block";
-        forma.style.width = "50%";
+
+    document.body.style.backgroundColor = "cornsilk"; //boja pozadine
+
+    let izmešaniNiz5Pitanja = niz => {
+        for (let i = niz.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          let x = niz[i];
+          niz[i] = niz[j];
+          niz[j] = x;
+        }
+        return niz.slice(0, 5);
+    };
+    
+    let noviNiz = izmešaniNiz5Pitanja(niz);
+
+    let forma = document.createElement("form"); 
+
+    for (let i = 0; i < noviNiz.length; i++) {
+        let paragraf = document.createElement("p");
+        paragraf.style.border = "1px solid orange";
+        paragraf.style.borderRadius = "10px";
+        paragraf.style.backgroundColor = "white";
+        paragraf.style.padding = "10px";
+        paragraf.style.display = "block";
+        paragraf.style.width = "50%";
         let pitanje = document.createElement("h3");
         pitanje.textContent = `${i+1}. ${niz[i].tekst}`;
-        p = i + 1;
-        for (let j = 0; j < niz[i].odgovori.length; j++) {
+        paragraf.appendChild(pitanje);
+        
+        for (let j = 0; j < noviNiz[i].odgovori.length; j++) {
             let razmak = document.createElement("br");
             let odgovorIzbor = document.createElement("input");
             odgovorIzbor.type = "radio";
             odgovorIzbor.name = `ponuđenoNaPitanje${i}`;
-            odgovorIzbor.id = `pitanje${i}ogovor${j}`;
+            odgovorIzbor.value = j;
             if (j == 0) {
                 odgovorIzbor.checked = "checked";
-            }
-            // if (j == niz[i].indeksKorektnogOdgovora) {
-            //     t += `<p>Tačno ste odgovorili na ${p}. pitanje.</p>`;
-                
-            // }
-            // else {
-            //     t += `<p>Netačno ste odgovorili na ${p}. pitanje.</p>`;
-            // }
-            
+            }  
+
             let odgovorPonuđen = document.createElement("label");
-            odgovorPonuđen.textContent = niz[i].odgovori[j];
-            pitanje.appendChild(razmak);
-            pitanje.appendChild(odgovorIzbor);
-            pitanje.appendChild(odgovorPonuđen);
- 
+            odgovorPonuđen.textContent = noviNiz[i].odgovori[j];
+            paragraf.appendChild(odgovorIzbor);
+            paragraf.appendChild(odgovorPonuđen);
+            paragraf.appendChild(razmak);
         }
 
-        forma.appendChild(pitanje);
-        document.body.appendChild(forma);
-        document.body.appendChild(odvPitanja);
+        forma.appendChild(paragraf);
+        
     }
+    document.body.appendChild(forma);
 
     let btnPošaljiOdgovore = document.createElement("button");
     btnPošaljiOdgovore.textContent = "Pošalji odgovore";
@@ -135,31 +132,45 @@ let kviz = niz => {
     btnNovaPitanja.textContent = "Nova pitanja";
     document.body.appendChild(btnNovaPitanja);
 
+    btnPošaljiOdgovore.style.margin = "5px";
+    btnNovaPitanja.style.margin = "5px";
+
+    let p = 0; //br. pitanja
+    
     btnPošaljiOdgovore.addEventListener("click", () => {
-        
-        // for (let i = 0; i < niz.length; i++) {
-        //     for (let j = 0; j < niz[i].length; j++) {
-        //         if ( j == niz[i].indeksKorektnogOdgovora && niz[i][j].checked) {
-        //             t += `<p>Tačno ste odgovorili na ${p}. pitanje.</p>`;
-                    
-        //         }
-        //         else {
-        //             t += `<p>Netačno ste odgovorili na ${p}. pitanje.</p>`;
-        //         }
-                
-        //     }
+        let rešenja = document.createElement("div");
+        for (let i = 0; i < noviNiz.length; i++) {
+            p = i + 1;
+            let tačno = noviNiz[i].indeksKorektnogOdgovora;
+            let čekirano = document.querySelector(`input[name="ponuđenoNaPitanje${i}"]:checked`).value;
+            if (tačno == čekirano) {
+                rešenja.innerHTML += `<p style="color:green;">Tačno ste odgovorili na ${p}. pitanje.</p>`;
+            }
+            else {
+                rešenja.innerHTML += `<p style="color:red;">Netačno ste odgovorili na ${p}. pitanje.</p>`;
+            }
             
-        // }
-        // document.body.innerHTML += t;
+            let k = document.getElementsByTagName("input");
+            let k1 = Array.from(k);
+            k1.forEach( n => {
+                n.disabled = true;
+            });
+            
+        }
+
+        document.body.appendChild(rešenja);
+        
     });
 
     btnNovaPitanja.addEventListener("click", () => {
-    location.reload();
+        location.reload();
     });
-
 
 };
 
-kviz(noviNiz);
+kviz(nizPitanja);
+
+
+
 
 

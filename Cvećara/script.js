@@ -5,7 +5,6 @@ let poljeRuže = document.getElementById(`ruže`);
 let poljeLjiljani = document.getElementById(`ljiljani`);
 let poljeGerberi = document.getElementById(`gerberi`);
 
-
 let poklonBombonjera = document.getElementById(`bombonjera`);
 let poklonČokolada = document.getElementById(`čokolada`);
 let poklonŠampanjac = document.getElementById(`šampanjac`);
@@ -15,7 +14,6 @@ poručeno.innerHTML = ``;
 
 let cenaSaPopustom = document.getElementById(`cena`);
 
-
 btnIzračunaj.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -23,11 +21,11 @@ btnIzračunaj.addEventListener("click", (e) => {
     let pop = ``;
 
     let poljeRužeKoličina = poljeRuže.value;
-    poljeRužeKoličina = parseInt(poljeRužeKoličina);
+    poljeRužeKoličina = parseInt(poljeRužeKoličina || 0);
     let poljeLjiljaniKoličina = poljeLjiljani.value;
-    poljeLjiljaniKoličina = parseInt(poljeLjiljaniKoličina);
+    poljeLjiljaniKoličina = parseInt(poljeLjiljaniKoličina || 0);
     let poljeGerberiKoličina = poljeGerberi.value;
-    poljeGerberiKoličina = parseInt(poljeGerberiKoličina);
+    poljeGerberiKoličina = parseInt(poljeGerberiKoličina || 0);
 
     let račun = poljeRužeKoličina * 150 + poljeLjiljaniKoličina * 120 + poljeGerberiKoličina * 70;
 
@@ -83,6 +81,5 @@ btnIzračunaj.addEventListener("click", (e) => {
     }
     poručeno.innerHTML = rez;
     cenaSaPopustom.innerHTML = pop;
-    
     
 });
