@@ -270,6 +270,7 @@ function akcija(event) {
     clickGetItems()
     .then(data => {
         divFilter.appendChild(data);
+        // console.log(data);
     })
     .catch(error => {
         console.log(error);
