@@ -23,6 +23,8 @@ let o3 = {
 };
 
 //Dodavanje filmova
+
+//6.
 db.collection(`movies`)
 .doc(`f6`)
 .set(o1)
@@ -33,6 +35,7 @@ db.collection(`movies`)
     console.log(`Doslo je do greske prilikom dodavanja filma: ${err}`);
 });
 
+//7.
 db.collection(`movies`)
 .doc(`f7`)
 .set(o2)
@@ -43,28 +46,38 @@ db.collection(`movies`)
     console.log(`Doslo je do greske prilikom dodavanja filma: ${err}`);
 });
 
+//8.
 db.collection(`movies`)
 .doc(`f8`)
 .set(o3)
 .then(() => {
     console.log(`Dodat je novi film u kolekciju "movies"`);
-})
-.catch((err) => {
-    console.log(`Doslo je do greske prilikom dodavanja filma: ${err}`);
-});
-
-//Menjanje podataka
-db.collection(`movies`)
-.doc(`f8`)
-.update({
-    rating: 8.1
+    return db.collection(`movies`) //Menjanje podataka "rating" naknadno, posle dodavanja dokumenta f8
+    .doc(`f8`)
+    .update({
+        rating: 8.1
+    })
 })
 .then(() => {
     console.log(`Uspesno izvrsena promena`);
 })
 .catch((err) => {
-    console.log(`Neuspesna promena: ${err}`);
+    console.log(`Greska: ${err}`);
 });
+
+//Menjanje podataka
+
+// db.collection(`movies`)
+// .doc(`f8`)
+// .update({
+//     rating: 8.1
+// })
+// .then(() => {
+//     console.log(`Uspesno izvrsena promena`);
+// })
+// .catch((err) => {
+//     console.log(`Neuspesna promena: ${err}`);
+// });
 
 db.collection(`movies`)
 .doc(`f1`)
@@ -79,20 +92,24 @@ db.collection(`movies`)
 });
 
 //Dodavanje žanra
-let movie = db.doc(`movies/f2`);
-movie.update({
+
+let movie2 = db.doc(`movies/f2`);
+movie2.update({
     genres: firebase.firestore.FieldValue.arrayUnion("dark comedy")
 });
 
 //Brisanje žanra
-movie.update({
+
+movie2.update({
     genres: firebase.firestore.FieldValue.arrayRemove("crime film")
 });
 
 //Menjanje imena i prezimena režiseru
-let movie1 = db.doc(`movies/f8`);
-movie1.update({
+
+let movie8 = db.doc(`movies/f8`);
+movie8.update({
     "director.name": "John",
     "director.surname": "Musker"
 });
+
 
