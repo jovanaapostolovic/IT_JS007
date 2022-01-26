@@ -63,7 +63,7 @@ db.collection(`movies`)
     console.log(`Uspesno izvrsena promena`);
 })
 .catch((err) => {
-    console.log(`neuspesna promena: ${err}`);
+    console.log(`Neuspesna promena: ${err}`);
 });
 
 db.collection(`movies`)
@@ -75,7 +75,7 @@ db.collection(`movies`)
     console.log(`Uspesno izvrsena promena`);
 })
 .catch((err) => {
-    console.log(`neuspesna promena: ${err}`);
+    console.log(`Neuspesna promena: ${err}`);
 });
 
 //Dodavanje žanra
