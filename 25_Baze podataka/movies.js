@@ -41,14 +41,13 @@ db.collection(`movies`)
 .update({
     name: "Belfast",
     director: "Kenneth Branagh"
-
 })
 .then(() => {
     console.log(`Uspesno izvrsena promena`);
 })
 .catch((err) => {
     console.log(`neuspesna promena: ${err}`);
-})
+});
 
 let movie = db.doc(`movies/f2`);
 movie.update({

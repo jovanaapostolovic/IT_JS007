@@ -50,9 +50,6 @@ db.collection(`customers`)
 })
 .catch((err) => {
     console.log(`Greska prilikom dodavanja novog dokumenta: ${err}`);
-})
-.catch((err) => {
-    console.log(`Greska prilikom dodavanja novog dokumenta: ${err}`);
 });
 
 let datum1 = new Date("2022-01-26 20:00:00");
