@@ -100,3 +100,25 @@ db.collection(`customers`)
 
 console.log(`Test poruka`);
 
+
+// drugi nacin za dodavanje dokumenata
+db.collection(`tasks`)
+.add({
+    Title: "Vezba za projekat",
+    Description: "Vezbanje JS",
+    StartDate: firebase.firestore.Timestamp.fromDate(new Date("2022-01-29")),
+    DueDate: null,
+    Priority: true
+})
+.then(() => {
+    console.log("uspešno dodat zadatak u kolekciju tasks");
+})
+.catch((err) => {
+    console.log(`Desila se greška: ${err}`);
+});
+
+/*
+db.collection(`...`).add() <=> db.collection(`...`).doc().set() - dodaje novi dokument sa random generisanim ID-jem
+
+db.collection(`...`).doc(id).set() - dodaje novi document sa zadatim ID-jem
+*/

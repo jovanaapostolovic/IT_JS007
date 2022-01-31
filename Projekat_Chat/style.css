@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.topbar {
+    overflow: hidden;
+}
+
+.topbar ul button {
+    background-color: purple;
+    float: left;
+    width: 25%;
+    text-align: center;
+    border: solid white;
+    color: pink;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a :active {
+    color: white;
+}
+
+a :hover {
+    color: rgb(63, 8, 63);
+}
+
+form {
+    display: inline-block;
+}
