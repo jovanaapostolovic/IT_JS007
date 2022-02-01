@@ -8,35 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>IT Bootcamp Chat</h1>
-        <h3>Choose a chatroom</h3>
-    </header>
+    <div class="row">
+        <header class="col-12 col-t-12">
+            <h1>IT Bootcamp Chat</h1>
+            <h3>Choose a chatroom</h3>
+        </header>
+    </div>
 
-    <nav class="topbar">
-        <ul>
-            <button id="" class=""><li>#general</li></button>
-            <button id="" class=""><li>#js</li></button>
-            <button id="" class=""><li>#homework</li></button>
-            <button id="" class=""><li>#tests</li></button>
-        </ul>
-
+    <nav class="topbar row">
+        <button id="btnGeneral" class="btn col-3 col-t-12">#general</button>
+        <button id="btnJs" class="btn col-3 col-t-12">#js</button>
+        <button id="btnHomework" class="btn col-3 col-t-12">#homework</button>
+        <button id="btnTests" class="btn col-3 col-t-12">#tests</button>
     </nav>
 
-    <section>
+    <section class="row">
         <ul>
 
         </ul>
     </section>
 
-    <form action="" id="formMessage">
-        <input type="text" placeholder="Your message..">
-        <input type="submit" value="Send"> 
+    <form action="" id="formMessage" class="row">
+        <input id="inputMessage" class="col-6 col-t-12" type="text" placeholder="Your message..">
+        <input id="btnSend" class="btn col-6 col-t-12" type="submit" value="Send"> 
     </form>
-    <br>
-    <form action="" id="">
-        <input type="text" placeholder="Update username">
-        <input type="submit" value="Update">
+    <form action="" id="formUsername" class="row">
+        <input id="inputUsername" class="col-6 col-t-12" type="text" placeholder="Update username">
+        <input id="btnUpdate" class="btn col-6 col-t-12" type="submit" value="Update">
     </form>
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
