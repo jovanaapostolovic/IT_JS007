@@ -15,7 +15,13 @@ class Chatroom {
     
     //username
     set username(u) {
-        this._username = u;
+        if (u.length > 2 && u.length < 10 && u.trim()) {
+            this._username = u;
+        }
+        else {
+            alert("Username must contain between 2 and 10 characters!")
+        }
+        
     }
 
     get username() {
@@ -41,8 +47,11 @@ class Chatroom {
     }
 
     //metod koji prati promene u bazi i vraća poruke
-    getChats(callback){
-        this.chats.onSnapshot(snapshot => {
+    getChats(callback) {
+        this.chats
+        .where("room", "==", this.room)
+        .orderBy("created_at", "asc")
+        .onSnapshot(snapshot => {
             snapshot.docChanges().forEach(change => {
                 //kada se desila promena u bazi ispisati "promena u bazi"
                 // console.log(change.type);
@@ -52,12 +61,24 @@ class Chatroom {
 
                 //ispisati dokumente koji su dodati u bazu
                 if (change.type == "added") {
-                    // console.log(change.doc.data());
                     callback(change.doc.data()); //prosleđivanje dokumenta na ispis(ispis realizujemo kada realizujemo callback)
+                    // console.log(change.doc.data()); 
                 }
             });
         });
     }
+
+    //metod kome se kao parametar prosleđuje novo korisničko ime, a on setuje username korisnika na prosleđenu vrednost
+    updateUsername(newU) {
+        this._username = newU;
+    }
+
+    //metod ome se kao parametar prosleđuje naziv sobe, a on setuje ime sobe
+    updateRoom(newR) {
+        this._room = newR;
+    }
+
+
 }
 
 export default Chatroom;
