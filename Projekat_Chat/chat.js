@@ -77,8 +77,6 @@ export class Chatroom {
     updateRoom(newR) {
         this._room = newR;
     }
-
-
 }
 
 // export default Chatroom;
