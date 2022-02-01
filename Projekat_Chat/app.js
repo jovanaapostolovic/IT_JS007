@@ -1,27 +1,8 @@
-import Chatroom from "./chat.js";
-
-// let chats = db.collection(`chats`);
-
-// db.collection(`chats`)
-// .get()
-// .then(snapshot => {
-//     if (!snapshot.empty) {
-//         let allDocs = snapshot.docs;
-//         allDocs.forEach(doc => {
-//             console.log(doc.id, doc.data());
-//         });
-//     }
-//     else {
-//         console.log(`Nema dokumenata u kolekciji`);
-//     }
-// })
-// .catch(err => {
-//     console.log(`Nemoguće dohvatiti dokumente iz kolekcije: ${err}`);
-// });
+import {Chatroom} from "./chat.js";
+import {ChatUI} from "./ui.js";
 
 let c1 = new Chatroom("js", "mirko72");
 let c2 = new Chatroom("general", "coka24");
-
 
 //test getera
 console.log(c1.username, c1.room);
@@ -45,3 +26,7 @@ let c3 = new Chatroom("js", "sonja98");
 c2.getChats(d => {
     console.log(d);
 });
+
+let ulChatList = document.querySelector("ul");
+let c = new ChatUI(ulChatList);
+

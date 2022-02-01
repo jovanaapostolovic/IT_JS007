@@ -1,4 +1,4 @@
-class Chatroom {
+export class Chatroom {
     constructor(r, u) {
         this.room = r; 
         this.username = u; 
@@ -81,4 +81,4 @@ class Chatroom {
 
 }
 
-export default Chatroom;
+// export default Chatroom;
