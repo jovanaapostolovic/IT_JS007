@@ -16,7 +16,7 @@ export class Chatroom {
     //username
     set username(u) {
         if (u.length > 2 && u.length < 10 && u.trim()) {
-            this._username = u;
+            this._username = u; //setujemo korisničko ime iz inputa
         }
         else {
             alert("Username must contain between 2 and 10 characters!")
@@ -77,6 +77,7 @@ export class Chatroom {
     updateRoom(newR) {
         this._room = newR;
     }
+
 }
 
 // export default Chatroom;

@@ -1,48 +1,34 @@
 import {Chatroom} from "./chat.js";
 import {ChatUI} from "./ui.js";
 
-let c1 = new Chatroom("js", "mirko72");
-let c2 = new Chatroom("general", "coka24");
-
-//test getera
-// console.log(c1.username, c1.room);
-
-//test setera
-c1.username = "mirko73";
-// console.log(c1.username);
-
-c1.room = "general";
-// console.log(c1.room);
-
-// c1.addChat("Hello");
-// c2.addChat("HR trening!");
-
-let c3 = new Chatroom("js", "sonja98");
-// dodajemo poruku
-c3.addChat("Pošaljite CV")
-    .then( () => console.log("Uspešno dodat chat!"))
-    .catch( err => console.log(err)
-);
-
-//ispis dokumenata iz db u konzoli
-c2.getChats(d => {
-    console.log(d);
-});
-
+//DOM
 let ulChatList = document.querySelector("ul");
-let chatUI1 = new ChatUI(ulChatList);
-
-//ispis dokumenata iz db na stranici
-c2.getChats(d => {
-    chatUI1.templateLI(d);
-});
-
 let formMess = document.getElementById("formMessage");
 let formUser = document.getElementById("formUsername");
 let btnSend = document.getElementById("btnSend");
 let btnUsername = document.getElementById("btnUpdate");
 let inputMessage = document.getElementById("inputMessage");
 let inputUsername = document.getElementById("inputUsername");
+
+//objekti klasa / instance klasa
+let chatroom = new Chatroom("general", "jovana");
+let chatUI = new ChatUI(ulChatList);
+
+//ispis dokumenata iz db u konzoli
+chatroom.getChats(d => {
+    console.log(d);
+});
+
+//dodajemo poruku
+// chatroom.addChat("Pošaljite CV")
+//     .then( () => console.log("Uspešno dodat chat!"))
+//     .catch( err => console.log(err)
+// );
+
+//ispis dokumenata iz db na stranici
+chatroom.getChats(d => {
+    chatUI.templateLI(d);
+});
 
 btnSend.addEventListener("click", e => {
     e.preventDefault();
