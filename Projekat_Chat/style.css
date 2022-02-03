@@ -4,13 +4,22 @@
 }
 body {
     text-align: center;
-    color: plum;
+    color: rgb(42, 37, 51);
     border-width: 5px;
     border-color: rebeccapurple;
+    background-image: url(https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
 }
 
 h1 {
     color: purple;
+}
+
+section {
+    overflow: scroll;
 }
 
 .btn {
@@ -33,11 +42,13 @@ h1 {
 
 form {
     margin: 15px;
+    /* display: flex;
+    justify-content: center; */
 }
 
-input {
+form input {
     width: 400px;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
     border-radius: 5px;
 }
@@ -49,6 +60,30 @@ input {
 .btn:hover {
     color: rgb(63, 8, 63);
     cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+ul li {
+    margin: 0 auto;
+}
+
+ul li:nth-child(odd) {
+    background-color: rgb(122, 122, 211);
+    text-align: left;
+    border-radius: 0px 20px 20px 20px;
+    
+}
+
+ul li:nth-child(even) {
+    background-color: rgb(185, 105, 231);
+    text-align: right;
+    border-radius: 20px 0px 20px 20px;
+    
 }
 
 /* responsive */

@@ -23,19 +23,24 @@
     </nav>
 
     <section class="row">
-        <ul id="messDisp">
+        <ul id="messDisp" class="col-12 col-t-12">
 
         </ul>
     </section>
 
-    <form action="" id="formMessage" class="row">
-        <input id="inputMessage" class="col-6 col-t-12" type="text" placeholder="Your message..">
-        <input id="btnSend" class="btn col-6 col-t-12" type="submit" value="Send"> 
-    </form>
-    <form action="" id="formUsername" class="row">
-        <input id="inputUsername" class="col-6 col-t-12" type="text" placeholder="Update username">
-        <input id="btnUpdate" class="btn col-6 col-t-12" type="submit" value="Update">
-    </form>
+    <div class="row">
+        <form action="" id="formMessage" class="col-12 col-t-12">
+            <input id="inputMessage" class="" type="text" placeholder="Your message..">
+            <input id="btnSend" class="btn" type="submit" value="Send"> 
+        </form>
+    </div>
+
+    <div class="row">
+        <form action="" id="formUsername" class="col-12 col-t-12">
+            <input id="inputUsername" class="" type="text" placeholder="Update username">
+            <input id="btnUpdate" class="btn" type="submit" value="Update">
+        </form>
+    </div>
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>

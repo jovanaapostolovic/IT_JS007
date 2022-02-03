@@ -39,7 +39,7 @@ a4.sviraj();
 a1.vozi(50);
 a4.vozi(200);
 
-// u klasi pisemo polja i MediaStreamAudioDestinationNodesva olja klase se definišu u constructor
+// u klasi pisemo polja i  polja klase se definišu u constructor-u
 // možemo dodavati proizvoljne metode 
 // svi objekti klase imaće polja i metode navedene u klasi
 
