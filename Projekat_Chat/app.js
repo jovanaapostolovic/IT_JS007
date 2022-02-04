@@ -9,39 +9,19 @@ let btnSend = document.getElementById("btnSend");
 let btnUsername = document.getElementById("btnUpdate");
 let inputMessage = document.getElementById("inputMessage");
 let inputUsername = document.getElementById("inputUsername");
+let topbar = document.getElementById("topbar");
+let btnGeneral = document.getElementById("btnGeneral");
+let btnJs = document.getElementById("btnJs");
+let btnHomework = document.getElementById("btnHomework");
+let btnTests = document.getElementById("btnTests");
 
 //objekti klasa / instance klasa
-let chatroom = new Chatroom("general", "jovana");
+let username = "anonymous";
+if (localStorage.username) {
+    username = localStorage.username;
+}
+let chatroom = new Chatroom("js", username);
 let chatUI = new ChatUI(ulChatList);
-
-//postavljanje vrednosti u local storage
-localStorage.setItem("nazivPromenljive", 5);
-localStorage.setItem("nazivPromenljive", 6);
-localStorage.setItem("nazivPromenljive", "testString");
-localStorage.setItem("x", 7);
-localStorage.setItem("y", 10);
-
-//uzimanje vrednosti iz local storage
-let z = localStorage.x + localStorage.y;
-console.log(z);
-console.log(localStorage.x);
-if (localStorage.x) {
-    console.log("x postoji");
-}
-else {
-    console.log("x ne postoji");
-}
-
-//ispis dokumenata iz db u konzoli
-// chatroom.getChats(d => {
-//     console.log(d);
-// });
-
-//dodajemo poruku
-// chatroom.addChat("Pošaljite CV")
-//     .then( () => console.log("Uspešno dodat chat!"))
-//     .catch( err => console.log(err)
-// );
 
 //ispis dokumenata iz db na stranici
 chatroom.getChats(d => {
@@ -51,39 +31,60 @@ chatroom.getChats(d => {
 btnSend.addEventListener("click", e => {
     e.preventDefault();
     let msg = inputMessage.value;
-    chatroom.addChat(msg)
-    .then(() => {
+    if (msg.trim()) {
+        chatroom.addChat(msg)
+        .then(() => {
+            formMess.reset();
+            // inputMessage.value = "";
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+    else {
+        alert("Invalid message entry!");
         formMess.reset();
-        // inputMessage.value = "";
-    })
-    .catch(err => {
-        console.log(err);
-    })
-
+    }
+    
 });
 
 btnUsername.addEventListener("click", e => {
     e.preventDefault();
     let newUsername = inputUsername.value;
-    chatroom.updateUsername(newUsername)
+    localStorage.setItem("newUsername", newUsername);
+    chatroom.updateUsername(newUsername);
     formUser.reset();
-
+    let userNotification = document.createElement("p");
+    userNotification.innerHTML = `You are logged in as <b> ${newUsername} </b>`;
+    let footer = document.querySelector("footer");
+    footer.appendChild(userNotification);
+    if (userNotification) {
+        setTimeout(() => {
+            footer.innerHTML = "";
+        }, 3000);
+    };
+   
 });
 
-// btnSend.addEventListener("click", e => {
-//     e.preventDefault();
-//     let msg = inputMessage.value;
-//     if (msg.trim()) {
-//         c1.addChat(msg)
-//         .then(() => {
-//             btnSend.reset();
-            
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         })
-        
-//     }
-//     inputMessage.value = "";
+topbar.addEventListener("click", e => {
+    if (e.target.tagName == "BUTTON") {
+        //izbrisati sve poruke sa ekrana
+        chatUI.clear();
+        //menjanje sobe
+        chatroom.updateRoom(e.target.id);
+        //prikaz poruka
+        chatroom.getChats(d => {
+            chatUI.templateLI(d);
+        });
+        //odznačavanje svih soba
+        let noRooms = document.querySelectorAll(".btn");
+        noRooms.forEach(el => {
+            el.style.backgroundColor = "purple";
+        });
+        //označavanje trenutne sobe
+        let roomBtn = document.getElementById(e.target.id);
+        roomBtn.style.backgroundColor = "rgb(122, 122, 211)";
+    }
+    
+});
 
-// });

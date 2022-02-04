@@ -27,11 +27,11 @@ section {
     color: pink;
 }
 
-.topbar {
+#topbar {
     overflow: hidden;
 }
 
-.topbar button {
+#topbar button {
     float: left;
     height: 40px;
     text-align: center;
@@ -54,7 +54,7 @@ form input {
 }
 
 .btn:active {
-    color: white;
+    background-color: rgb(122, 122, 211);
 }
 
 .btn:hover {

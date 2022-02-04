@@ -47,7 +47,11 @@ export class ChatUI {
         let htmlLI = `<li style="border:1px solid purple; padding:10px; display:block; width:50%; position:">${data.username}: ${data.message} <br> ${this.formatDate(d)}</li>`;
         this.message.innerHTML += htmlLI;
 
-    }
+    };
+
+    clear() {
+        this.message.innerHTML = "";
+    };
 
 }
 
