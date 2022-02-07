@@ -42,8 +42,8 @@ section {
 
 form {
     margin: 15px;
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    justify-content: center;
 }
 
 form input {
@@ -51,6 +51,18 @@ form input {
     height: 40px;
     font-size: 20px;
     border-radius: 5px;
+    border: black;
+    margin-bottom: -10px;
+    display: inline-block;
+}
+
+textarea {
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: black;
+    display: inline-block;
 }
 
 .btn:active {
@@ -72,14 +84,14 @@ ul li {
     margin: 0 auto;
 }
 
-ul li:nth-child(odd) {
+ul li {
     background-color: rgb(122, 122, 211);
     text-align: left;
     border-radius: 0px 20px 20px 20px;
     
 }
 
-ul li:nth-child(even) {
+ul .myMessage {
     background-color: rgb(185, 105, 231);
     text-align: right;
     border-radius: 20px 0px 20px 20px;

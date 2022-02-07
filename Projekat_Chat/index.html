@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
     <div class="row">
@@ -30,7 +33,7 @@
 
     <div class="row">
         <form action="" id="formMessage" class="col-12 col-t-12">
-            <input id="inputMessage" class="" type="text" placeholder="Your message...">
+            <textarea id="inputMessage" class="" type="text" placeholder="Your message..."></textarea>
             <input id="btnSend" class="btn" type="submit" value="Send"> 
         </form>
     </div>
@@ -42,10 +45,27 @@
         </form>
     </div>
 
-    <footer>
-        
-    </footer>
-    
+    <div class="row">
+        <form action="" class="col-12 col-t-12">
+            <input type="color" name="changeColor" id="changeColor" value="#000000">
+            <input id="btnColor" class="btn" type="submit" value="Update color">
+        </form>
+    </div>
+
+    <div class="row">
+        <form action="" class="col-12 col-t-12">
+            <input type="datetime-local" name="startTime" id="startTime">
+            <input type="datetime-local" name="endTime" id="endTime">
+            <input type="submit" id="btnTimeInterval" class="btn" value="Set dates">
+        </form>
+    </div>
+
+    <div class="row">
+        <footer class="col-12 col-t-12">
+
+        </footer>
+    </div>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>

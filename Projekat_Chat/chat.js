@@ -3,6 +3,7 @@ export class Chatroom {
         this.room = r; 
         this.username = u; 
         this.chats = db.collection("chats"); 
+        this.unsub = false; //definisanje da bi bili sigurni da je učitana stranica, signal da je stranica prvi put učitana - false vrednost
     }
     //room
     set room(r) {
@@ -15,13 +16,7 @@ export class Chatroom {
     
     //username
     set username(u) {
-        if (u.length > 2 && u.length < 10 && u.trim()) {
-            this._username = u; //setujemo korisničko ime iz inputa
-        }
-        else {
-            alert("Username must contain between 2 and 10 characters!")
-        }
-        
+        this._username = u; //setujemo korisničko ime iz inputa
     }
 
     get username() {
@@ -46,38 +41,63 @@ export class Chatroom {
         
     }
 
+    deleteMess(id) {
+        db.collection(`chats`)
+            .doc(id)
+            .delete()
+            .then(() => {
+             console.log(`Uspesno brisanje`);;
+            })
+            .catch((e) => {
+                console.log(`Greska: ${e}`);
+                
+            });
+    }
+
     //metod koji prati promene u bazi i vraća poruke
     getChats(callback) {
-        this.chats
+        this.unsub = this.chats
         .where("room", "==", this.room)
         .orderBy("created_at", "asc")
         .onSnapshot(snapshot => {
             snapshot.docChanges().forEach(change => {
-                //kada se desila promena u bazi ispisati "promena u bazi"
-                // console.log(change.type);
-                // if (change.type == "added") {
-                //     console.log("Promena u bazi!");
-                // }
-
                 //ispisati dokumente koji su dodati u bazu
                 if (change.type == "added") {
-                    callback(change.doc.data()); //prosleđivanje dokumenta na ispis(ispis realizujemo kada realizujemo callback)
-                    // console.log(change.doc.data()); 
+                    callback(change.doc); //prosleđivanje dokumenta na ispis(ispis realizujemo kada realizujemo callback)
                 }
             });
         });
     }
 
-    //metod kome se kao parametar prosleđuje novo korisničko ime, a on setuje username korisnika na prosleđenu vrednost
+    //metod kome se kao parametar prosleđuje novo korisničko ime, a on setuje username korisnika na prosleđenu vrednost ako zadovoljava kriterijume
     updateUsername(newU) {
-        this._username = newU;
+        newU = newU.trim();
+        if (newU.length >= 2 && newU.length <= 10) {
+            this.username = newU;
+            localStorage.setItem("newUsername", newU);
+        }
+        else {
+            alert("Please enter a valid username!");
+        }
     }
-
-    //metod ome se kao parametar prosleđuje naziv sobe, a on setuje ime sobe
+    
+    //metod kome se kao parametar prosleđuje naziv sobe, a on setuje ime sobe
     updateRoom(newR) {
         this._room = newR;
+        if (this.unsub != false) { //signal da unsub više nije false, nego je u getChats postalo funkcija
+            this.unsub(); //unsub je sada f-ja i pozivamo je sa ()
+        }
     }
 
+    deleteMsg(id) {
+        this.chats
+        .doc(id)
+        .delete()
+        .then()
+        .catch(er => {
+            console.log(er);
+        });
+    }
 }
 
 // export default Chatroom;
