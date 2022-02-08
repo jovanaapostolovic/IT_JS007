@@ -13,7 +13,7 @@
 <body>
     <div class="row">
         <header class="col-12 col-t-12">
-            <h1>IT Bootcamp Chat</h1>
+            <h1 id="h">IT Bootcamp Chat</h1>
             <h3>Choose a chatroom</h3>
         </header>
     </div>
@@ -25,11 +25,19 @@
         <button id="btnTests" class="btn col-3 col-t-12">#tests</button>
     </nav>
 
-    <section class="row">
+    <section id="messages" class="row">
         <ul id="messDisp" class="col-12 col-t-12">
 
         </ul>
     </section>
+
+    <div class="row">
+        <form action="" class="col-12 col-t-12">
+            <input type="datetime-local" name="startTime" id="startTime">
+            <input type="datetime-local" name="endTime" id="endTime">
+            <input type="submit" id="btnTimeInterval" class="btn" value="Set dates">
+        </form>
+    </div>
 
     <div class="row">
         <form action="" id="formMessage" class="col-12 col-t-12">
@@ -47,16 +55,8 @@
 
     <div class="row">
         <form action="" class="col-12 col-t-12">
-            <input type="color" name="changeColor" id="changeColor" value="#000000">
-            <input id="btnColor" class="btn" type="submit" value="Update color">
-        </form>
-    </div>
-
-    <div class="row">
-        <form action="" class="col-12 col-t-12">
-            <input type="datetime-local" name="startTime" id="startTime">
-            <input type="datetime-local" name="endTime" id="endTime">
-            <input type="submit" id="btnTimeInterval" class="btn" value="Set dates">
+            <input type="color" name="changeColor" id="changeColor" value="#ffffff">
+            <input id="btnColor" class="btn" type="submit" value="Update text color">
         </form>
     </div>
 

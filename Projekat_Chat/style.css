@@ -11,15 +11,46 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-
 }
 
-h1 {
-    color: purple;
+#h {
+    color: orange;
+    text-shadow: 2px 2px purple;
 }
 
-section {
+#messages {
+    height: 300px;
     overflow: scroll;
+    overflow-x: hidden;
+    border: 2px black;
+}
+
+body::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: rgb(255, 0, 191); /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: blue; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid orange; /* creates padding around scroll thumb */
+}
+
+#messages::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+}
+  
+#messages::-webkit-scrollbar-track {
+    background: rgb(212, 122, 182); /* color of the tracking area */
+}
+  
+#messages::-webkit-scrollbar-thumb {
+    background-color: rgb(151, 74, 161); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid orange; /* creates padding around scroll thumb */
 }
 
 .btn {
@@ -29,6 +60,7 @@ section {
 
 #topbar {
     overflow: hidden;
+    margin: auto;
 }
 
 #topbar button {
@@ -56,7 +88,7 @@ form input {
     display: inline-block;
 }
 
-textarea {
+#inputMessage {
     width: 400px;
     height: 40px;
     font-size: 20px;
@@ -82,20 +114,15 @@ ul {
 
 ul li {
     margin: 0 auto;
-}
-
-ul li {
     background-color: rgb(122, 122, 211);
     text-align: left;
     border-radius: 0px 20px 20px 20px;
-    
 }
 
 ul .myMessage {
     background-color: rgb(185, 105, 231);
     text-align: right;
     border-radius: 20px 0px 20px 20px;
-    
 }
 
 /* responsive */
